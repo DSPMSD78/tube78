@@ -8,6 +8,7 @@ import WatchPage from "./components/WatchPage";
 import MainContainer from "./components/MainContainer";
 import Demo from "./components/Demo";
 import Demo2 from "./components/Demo2";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export const appRouter = createBrowserRouter([
   {
@@ -36,13 +37,16 @@ export const appRouter = createBrowserRouter([
 ]);
 
 function App() {
+  const queryClient = new QueryClient();
   return (
-    <Provider store={store}>
-      <div>
-        <Head />
-        <RouterProvider router={appRouter}></RouterProvider>
-      </div>
-    </Provider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <div>
+          <Head />
+          <RouterProvider router={appRouter}></RouterProvider>
+        </div>
+      </Provider>
+    </QueryClientProvider>
   );
 }
 
