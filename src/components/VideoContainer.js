@@ -37,6 +37,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { useEffect, useRef } from "react";
 import { useIntersection } from "@mantine/hooks";
 import { YOUTUBE_VIDEOS_API } from "../utils/constants";
+import Shimmer from "./Shimmer";
 
 const VideoContainer = () => {
   let videos = [];
@@ -111,12 +112,18 @@ const VideoContainer = () => {
         </div>
       ))} */}
       </div>
-      <button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
-        {isFetchingNextPage
-          ? "Loading more..."
-          : (data?.pages.length ?? 0) < 7
-          ? "Load more"
-          : "Nothing more to load"}
+      <button
+        className="ml-[40rem]"
+        onClick={() => fetchNextPage()}
+        disabled={isFetchingNextPage}
+      >
+        {isFetchingNextPage ? (
+          <Shimmer />
+        ) : (data?.pages.length ?? 0) < 6 ? (
+          <h1 className="text-lg font-bold">Load more</h1>
+        ) : (
+          <h1 className="text-lg font-bold">Nothing more to load</h1>
+        )}
       </button>
     </>
   );
