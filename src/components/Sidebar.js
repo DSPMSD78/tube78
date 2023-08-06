@@ -10,7 +10,7 @@ const Sidebar = () => {
   }
 
   return (
-    <div className="p-5 shadow-lg">
+    <div className="sidebar p-5 shadow-lg">
       <ul>
         <li>
           <Link to={"/"}>Home</Link>

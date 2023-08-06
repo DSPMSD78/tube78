@@ -17,7 +17,7 @@ const ButtonList = () => {
     "Music",
   ];
   return (
-    <div className="flex">
+    <div className="button-list">
       {list.map((x) => (
         <Button key={x} name={x} />
       ))}

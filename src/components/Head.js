@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
 import { cacheSearch } from "../utils/searchSlice";
+import { Link } from "react-router-dom";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -38,7 +39,7 @@ const Head = () => {
   };
 
   return (
-    <div className="grid grid-flow-col p-3 m-2 shadow-lg">
+    <div className=" head grid grid-flow-col p-3 shadow-lg">
       <div className="flex col-span-1">
         <img
           className="h-10 cursor-pointer"
@@ -68,7 +69,10 @@ const Head = () => {
             onBlur={() => setShow(false)}
             onFocus={() => setShow(true)}
           />
-          <button className="border border-gray-400 py-2 px-5 bg-gray-100 rounded-r-full">
+          <button
+            className="border border-gray-400 py-2 px-5 bg-gray-100 rounded-r-full"
+            onClick={() => setSearchQuery("")}
+          >
             🔍
           </button>
         </div>

@@ -83,26 +83,27 @@ const VideoContainer = () => {
 
   return (
     <>
-      <div className="flex flex-wrap justify-evenly">
-        {_posts.map((post, i) => {
-          if (i === _posts.length - 1)
+      <div className="video-container">
+        <div className="video ">
+          {_posts.map((post, i) => {
+            if (i === _posts.length - 1)
+              return (
+                <Link
+                  className="title"
+                  ref={ref}
+                  key={post.id}
+                  to={"/watch?v=" + post.id}
+                >
+                  <VideoCard data={post} />
+                </Link>
+              );
             return (
-              <Link
-                className="title"
-                ref={ref}
-                key={post.id}
-                to={"/watch?v=" + post.id}
-              >
+              <Link className="title" key={post.id} to={"/watch?v=" + post.id}>
                 <VideoCard data={post} />
               </Link>
             );
-          return (
-            <Link className="title" key={post.id} to={"/watch?v=" + post.id}>
-              <VideoCard data={post} />
-            </Link>
-          );
-        })}
-        {/* {data?.pages.map((page, i) => (
+          })}
+          {/* {data?.pages.map((page, i) => (
         <div className="flex flex-wrap justify-evenly" key={i}>
           {page.map((v) => (
             <Link key={v.id} to={"/watch?v=" + v.id}>
@@ -111,6 +112,7 @@ const VideoContainer = () => {
           ))}
         </div>
       ))} */}
+        </div>
       </div>
       <button
         className="ml-[40rem]"

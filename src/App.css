@@ -1,3 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.head {
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  height: 4rem;
+  top: 0;
+}
+
+.body {
+  display: grid;
+  margin-top: 4rem;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  width: 10vw;
+  height: calc(100vh - 4rem);
+}
+
+.main-container {
+  margin-left: 10vw;
+}
+
+.button-list {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 1rem;
+}
+
+.video-container {
+  margin: 0 1rem;
+}
+
+.video {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.video > .title {
+  flex-shrink: 1;
+  flex-basis: auto;
+}
