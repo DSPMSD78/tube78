@@ -92,13 +92,13 @@ const VideoContainer = () => {
                   className="title"
                   ref={ref}
                   key={post.id}
-                  to={"/watch?v=" + post.id}
+                  to={"watch?v=" + post.id}
                 >
                   <VideoCard data={post} />
                 </Link>
               );
             return (
-              <Link className="title" key={post.id} to={"/watch?v=" + post.id}>
+              <Link className="title" key={post.id} to={"watch?v=" + post.id}>
                 <VideoCard data={post} />
               </Link>
             );

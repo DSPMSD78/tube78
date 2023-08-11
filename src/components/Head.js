@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
 import { cacheSearch } from "../utils/searchSlice";
-import { Link } from "react-router-dom";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -49,7 +48,7 @@ const Head = () => {
             dispatch(toggleMenu());
           }}
         />
-        <a href="/">
+        <a href="/tube78">
           <img
             className="h-10 mx-2"
             alt="logo"

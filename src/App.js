@@ -12,19 +12,19 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export const appRouter = createBrowserRouter([
   {
-    path: "/",
+    path: "/tube78",
     element: <Body />,
     children: [
       {
-        path: "/",
+        path: "/tube78/",
         element: <MainContainer />,
       },
       {
-        path: "/watch",
+        path: "/tube78/watch",
         element: <WatchPage />,
       },
       {
-        path: "/demo",
+        path: "/tube78/demo",
         element: (
           <>
             <Demo />
